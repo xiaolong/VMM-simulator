@@ -1,4 +1,5 @@
-/* HW4 CS538 Vmm Sim Implementation, Fall 2011, Xiaolong Cheng */
+/* HW4 CS538 Vmm Sim Implementation, Fall 2011, Xiaolong Cheng
+ * environment: Ubuntu 10.4  with g++ */
 
 #include<cstdio>  
 #include<cstdlib>
