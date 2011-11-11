@@ -44,12 +44,16 @@ struct vmm_status{
   int numSwapOut;
   int numReplacement;
   int numPDEntry;
-  int numPT;
-  int numPTMax;
-  int numPageTotal;
+
+  int numPT;// # of PTs ever allocated
+  int numPTMax;// maximum PTs resident in mem at one moment
+  int numPTcurrent; //# of PTs currently in mem
+
+  int numPageTotal; //#of user pages total
   int numPageMax;
+  int numPageCurrent; //# of pages currently resident in mem
   int numFrame;
-} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 void printStat(){
 
@@ -262,9 +266,93 @@ public:
 
   void read(int addr){
     // printf("int addr is %d\n",addr);
+    stat.numRead++;
+    stat.numCycle+=MEM_COST;
+
+    
+    int ndxPD= getPDindex(addr);
+    int ndxPT= getPTindex(addr);
+    int pgOffset= getPageOffset(addr);
+    
+    struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
+    
+    if(!pdEntry->valid){// if not valid
+      //PT page fault
+      if(_DEBUG)printf("PT page fault\n");
+      stat.numCycle+=MEM_COST;
+      
+      int freePageFrameNdx=alloc_page_frame();
+
+      if(pdEntry->on_disk){
+	if(_DEBUG)printf("PT page on disk, swapping in..\n");
+	swapIn(pdEntry->disk_addr, freePageFrameNdx);
+      } else {
+	if(_DEBUG)printf("PT page not on disk, create new PT page \n");
+	new_page(freePageFrameNdx);
+	pdEntry->frame_addr = page_frames[freePageFrameNdx];
+	stat.numPDEntry++;
+      }
+
+      stat.numPT++;
+      stat.numPTcurrent++;
+      if(stat.numPTcurrent>stat.numPTMax) stat.numPTMax=stat.numPTcurrent;
+      
+      pdEntry->valid= true;
+    }// end if not valid
+
+    else {
+      if(_DEBUG)printf("PT page found\n");
+    }
+
+    struct page* PT= pdEntry->frame_addr;
+    struct entry* PTEntry = &PT->entries[ndxPT];//
+
+    if(!PTEntry->valid){
+      //user page fault
+      if(_DEBUG)printf("User page fault\n");
+      stat.numCycle+=MEM_COST;
+      int freePageFrameNdx=alloc_page_frame();
+      if(PTEntry->on_disk){
+	if(_DEBUG)printf("user page on disk, swapping in.. \n");
+	swapIn(PTEntry->disk_addr, freePageFrameNdx);
+      } else{
+	if(_DEBUG)printf("user page not on disk: create new user page \n");
+	new_page(freePageFrameNdx);
+	PTEntry->frame_addr=page_frames[freePageFrameNdx];
+      }
+
+      stat.numPageTotal++;
+      stat.numPageCurrent++;
+      if(stat.numPageCurrent>stat.numPageMax) stat.numPageMax=stat.numPageCurrent;
+      
+      PTEntry->valid = true;
+      pdEntry->valid = true;
+    } else{
+      if(_DEBUG) printf("user page found\n");
+    }
+
+    // accessing user page
+    struct page* userPage = PTEntry->frame_addr;
+    stat.numCycle+=MEM_COST;
+
+    
+
+
+      
+
+	 
+		  
+
   }
 
   void write(int addr){
+    stat.numWrite++;
+    stat.numCycle+=MEM_COST;
+
+    int ndxPD= getPDindex(addr);
+    int ndxPT= getPTindex(addr);
+    int pgOffset=getPageOffset(addr);
+
 
   }
 
