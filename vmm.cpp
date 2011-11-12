@@ -174,6 +174,40 @@ int find_frame_index(struct page* pg){
   exit(1);
 }
 
+
+  /* to allocate new disk space */
+  struct diskblock* allocDiskBlock(){
+    struct diskblock* dblk= (diskblock*)malloc(sizeof(struct diskblock));
+    if(!dblk){
+      fprintf(stderr,"allocDiskBlock: Not enough memory!\n");
+      exit(1);
+    }
+    if(_DEBUG)printf("allocated new disk block %p \n",dblk);
+    return dblk;
+  }
+
+
+  /*swap in a page from disk to given frame index */
+  void swapIn(struct diskblock* disk, int frameIdx){
+    if(_DEBUG)printf("Swap in page %d from disk %p \n",frameIdx,disk);
+    page_frames[frameIdx]=disk->page;
+    stat.numCycle +=SWAP_COST;
+    stat.numSwapIn++;
+  }
+
+  /* swap out a page to disk */
+  void swapOut(struct entry* e, struct page* frame, struct diskblock *dblk){
+    dblk->page = frame;
+    dblk->next = disk;//build up the list...
+    disk = dblk;
+    e->disk_addr=dblk;
+    stat.numCycle+=SWAP_COST;
+    if(_DEBUG) printf("Swap out %p to %p \n",frame,dblk);
+    stat.numSwapOut++;
+  }
+
+
+
 /* create a new page in page frames with index idx */
 void new_page(int idx){
   page_frames[idx]=(page*)calloc(1,sizeof(struct page));
@@ -186,8 +220,9 @@ void new_page(int idx){
 
 
 /* allocate an empty page frame and return its index */
+/* states of page frames are maintained in this function too*/
 int alloc_page_frame(){
-  int j,result;
+  int result;
 
   //check if free page frame available
   for(int i=0; i<N_frames;++i){
@@ -198,6 +233,117 @@ int alloc_page_frame(){
   }
 
 
+  //maintain the list of page frames, do swap out, update, etc...
+
+  //eviction follows the following order:
+  /* unmodified userpage > modified userpage > unmodified page table > modified
+     page table */
+
+  struct page *modifiedUP=NULL, *unmodifiedPT=NULL, *modifiedPT=NULL;
+  struct entry *mup_PTEntry=NULL, *mup_PDEntry=NULL,
+    *upt_PDEntry=NULL, *mpt_PDEntry=NULL;
+
+  for(int i=0; i<N_ENTRY_PER_PAGE;++i){
+    struct entry* pdEntry= &pdbr->entries[i];
+    // if in memory
+    if(pdEntry->valid){
+      struct page* PT = pdEntry->frame_addr;
+      
+      if(pdEntry->dirty && !modifiedPT){
+	if(_DEBUG)printf("found modified page table frame\n");
+	modifiedPT=PT;
+	mpt_PDEntry=pdEntry;
+      }
+      
+      if(!pdEntry->dirty && !unmodifiedPT){
+	if(_DEBUG)printf("found unmodified page table frame\n");
+	unmodifiedPT=PT;
+	upt_PDEntry=pdEntry;
+      }
+      
+      for(int j=0;j<N_ENTRY_PER_PAGE;++i){
+	struct entry* ptEntry = &PT->entries[j];
+	//if in memory
+	if(ptEntry->valid){
+	  struct page* userPage = ptEntry->frame_addr;
+
+	  if(ptEntry->dirty && !modifiedUP){
+	    if(_DEBUG)printf("found modified user page \n");
+	    modifiedUP=userPage;
+	    mup_PTEntry=ptEntry;
+	    mup_PDEntry=pdEntry;
+	  }
+
+	  if(!ptEntry->dirty){
+	    // the best option
+	    if(_DEBUG)printf("found unmodified user page frame! \n");
+	    if(!ptEntry->on_disk){
+	      struct diskblock* dblk = allocDiskBlock();
+	      swapOut(ptEntry,userPage,dblk);
+	      stat.numPageCurrent--;
+	      ptEntry->on_disk=true;
+	    }else {
+	      stat.numReplacement++;
+	    }
+	    ptEntry->valid=false;
+	    pdEntry->dirty=true;
+	    
+	    return find_frame_index(userPage);
+	  }
+	}
+      }
+    }
+  }
+
+  if(modifiedUP){
+    //exist modified user page
+    struct diskblock* dblk =mup_PTEntry->disk_addr;
+    if(!mup_PTEntry->on_disk){
+      dblk=allocDiskBlock();
+      mup_PTEntry->on_disk = true;
+    }
+    swapOut(mup_PTEntry,modifiedUP,dblk);
+    stat.numPageCurrent--;
+    mup_PTEntry->valid = false;
+    mup_PDEntry->dirty= true;
+    if(_DEBUG)printf("returning modified user page \n");
+    return find_frame_index(modifiedUP);
+  }
+
+  if(unmodifiedPT){//exists unmodified PT
+  
+    if(!upt_PDEntry->on_disk){
+      struct diskblock* dblk=allocDiskBlock();
+      swapOut(upt_PDEntry,unmodifiedPT,dblk);
+      upt_PDEntry->on_disk=true;
+    } else{
+      stat.numReplacement++;
+    }
+    stat.numPTcurrent--;
+    upt_PDEntry->valid = false;
+    if(_DEBUG) printf(" returning unmodified page table\n");
+    return find_frame_index(unmodifiedPT);
+  }
+
+  
+  if(modifiedPT){//exists modified page table
+    struct diskblock* dblk = mpt_PDEntry->disk_addr;
+    
+    if(!mpt_PDEntry->on_disk){
+      dblk=allocDiskBlock();
+      mpt_PDEntry->on_disk=true;
+    }
+    swapOut(mpt_PDEntry,modifiedPT, dblk);
+    stat.numPTcurrent--;
+    mpt_PDEntry->valid = false;
+    if(_DEBUG) printf("returning modified page table \n");
+    return find_frame_index(modifiedPT);
+  }
+
+  //just in case..
+  fprintf(stderr, "internal error!! \n");
+  exit(1);
+    
 }
 
 /* extract index in PD from a virtual address */
@@ -233,42 +379,13 @@ public:
     
   }
 
-  /* to allocate new disk space */
-  struct diskblock* allocDiskBlock(){
-    struct diskblock* dblk= (diskblock*)malloc(sizeof(struct diskblock));
-    if(!dblk){
-      fprintf(stderr,"allocDiskBlock: Not enough memory!\n");
-      exit(1);
-    }
-    if(_DEBUG)printf("allocated new disk block %p \n",dblk);
-    return dblk;
-  }
-
-  /*swap in a page from disk to given frame index */
-  void swapIn(struct diskblock* disk, int frameIdx){
-    if(_DEBUG)printf("Swap in page %d from disk %p \n",frameIdx,disk);
-    page_frames[frameIdx]=disk->page;
-    stat.numCycle +=SWAP_COST;
-    stat.numSwapIn++;
-  }
-
-  /* swap out a page to disk */
-  void swapOut(struct entry* e, struct page* frame, struct diskblock *dblk){
-    dblk->page = frame;
-    dblk->next = disk;//build up the list...
-    disk = dblk;
-    e->disk_addr=dblk;
-    stat.numCycle+=SWAP_COST;
-    if(_DEBUG) printf("Swap out %p to %p \n",frame,dblk);
-    stat.numSwapOut++;
+  ~vmmsim(){//destructor, do cleaning-up 
+    // more cleaning up..
   }
 
 
   void read(int addr){
     // printf("int addr is %d\n",addr);
-    stat.numRead++;
-    stat.numCycle+=MEM_COST;
-
     
     int ndxPD= getPDindex(addr);
     int ndxPT= getPTindex(addr);
@@ -336,7 +453,7 @@ public:
     stat.numCycle+=MEM_COST;
 
     
-
+    stat.numRead++;
 
       
 
@@ -346,18 +463,79 @@ public:
   }
 
   void write(int addr){
-    stat.numWrite++;
-    stat.numCycle+=MEM_COST;
-
     int ndxPD= getPDindex(addr);
     int ndxPT= getPTindex(addr);
-    int pgOffset=getPageOffset(addr);
+    int pgOffset= getPageOffset(addr);
+    
+    struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
+    
+    if(!pdEntry->valid){// if not valid
+      //PT page fault
+      if(_DEBUG)printf("PT page fault\n");
+      stat.numCycle+=MEM_COST;
+      
+      int freePageFrameNdx=alloc_page_frame();
+
+      if(pdEntry->on_disk){
+	if(_DEBUG)printf("PT page on disk, swapping in..\n");
+	swapIn(pdEntry->disk_addr, freePageFrameNdx);
+      } else {
+	if(_DEBUG)printf("PT page not on disk, create new PT page \n");
+	new_page(freePageFrameNdx);
+	pdEntry->frame_addr = page_frames[freePageFrameNdx];
+	stat.numPDEntry++;
+      }
+
+      stat.numPT++;
+      stat.numPTcurrent++;
+      if(stat.numPTcurrent>stat.numPTMax) stat.numPTMax=stat.numPTcurrent;
+      
+      pdEntry->valid= true;
+    }// end if not valid
+
+    else {
+      if(_DEBUG)printf("PT page found\n");
+    }
+
+    struct page* PT= pdEntry->frame_addr;
+    struct entry* PTEntry = &PT->entries[ndxPT];//
+
+    if(!PTEntry->valid){
+      //user page fault
+      if(_DEBUG)printf("User page fault\n");
+      stat.numCycle+=MEM_COST;
+      int freePageFrameNdx=alloc_page_frame();
+      if(PTEntry->on_disk){
+	if(_DEBUG)printf("user page on disk, swapping in.. \n");
+	swapIn(PTEntry->disk_addr, freePageFrameNdx);
+      } else{
+	if(_DEBUG)printf("user page not on disk: create new user page \n");
+	new_page(freePageFrameNdx);
+	PTEntry->frame_addr=page_frames[freePageFrameNdx];
+      }
+
+      stat.numPageTotal++;
+      stat.numPageCurrent++;
+      if(stat.numPageCurrent>stat.numPageMax) stat.numPageMax=stat.numPageCurrent;
+      
+      PTEntry->valid = true;
+      pdEntry->valid = true;
+    } else{
+      if(_DEBUG) printf("user page found\n");
+    }
+
+    // accessing user page
+    struct page* userPage = PTEntry->frame_addr;
+    stat.numCycle+=MEM_COST;
 
 
+    PTEntry->dirty =true;
+    pdEntry->dirty = true;
+    stat.numWrite++;
   }
 
 
-};
+};//end class
 
 
 
