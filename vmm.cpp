@@ -29,7 +29,7 @@ bool _TRACE = false;
 bool _VERSION = false;
 
 // default frame number is 10
-int N_frames =10;
+int N_frames =50;
 
 //stack<string> debugInfo; // LIFO for debug information
 
@@ -45,18 +45,22 @@ struct vmm_status{
   int numReplacement;
   int numPDEntry;
 
-  int numPT;// # of PTs ever allocated
-  int numPTMax;// maximum PTs resident in mem at one moment
-  int numPTcurrent; //# of PTs currently in mem
+  int numPT;         // # of PTs ever allocated
+  int numPTMax;      // maximum PTs resident in mem at one moment
+  int numPTcurrent;  //# of PTs currently in mem
 
-  int numPageTotal; //#of user pages total
+  int numPageTotal;  //#of user pages total
   int numPageMax;
   int numPageCurrent; //# of pages currently resident in mem
+
   int numFrame;
-} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,N_frames};
 
 void printStat(){
-
+  //prepare the data for printing
+  stat.numAccess = stat.numRead+ stat.numWrite;
+  stat.numCyclesWithoutVmm= stat.numAccess * MEM_COST;
+  
   printf("--------------STATISTICS---------------\n");
   printf("Access: %d\n Reads: %d\n Writes: %d\n Cycles: %d\n Cycles Without VMM :%d\n Swap ins: %d\n Swap outs: %d\n Pure Replacements: %d\n PD entries used: %d\n PT total: %d\n PT max: %d\n user pages total: %d\n user pages max: %d\n Physical page frames: %d\n",stat.numAccess, stat.numRead, stat.numWrite, stat.numCycle, stat.numCyclesWithoutVmm, stat.numSwapIn, stat.numSwapOut, stat.numReplacement, stat.numPDEntry, stat.numPT, stat.numPTMax, stat.numPageTotal, stat.numPageMax, stat.numFrame);
   printf("-----------------END-----------------\n");
@@ -176,7 +180,7 @@ int find_frame_index(struct page* pg){
 
 
   /* to allocate new disk space */
-  struct diskblock* allocDiskBlock(){
+ struct diskblock* allocDiskBlock(){
     struct diskblock* dblk= (diskblock*)malloc(sizeof(struct diskblock));
     if(!dblk){
       fprintf(stderr,"allocDiskBlock: Not enough memory!\n");
@@ -184,19 +188,19 @@ int find_frame_index(struct page* pg){
     }
     if(_DEBUG)printf("allocated new disk block %p \n",dblk);
     return dblk;
-  }
+ }
 
 
   /*swap in a page from disk to given frame index */
-  void swapIn(struct diskblock* disk, int frameIdx){
+ void swapIn(struct diskblock* disk, int frameIdx){
     if(_DEBUG)printf("Swap in page %d from disk %p \n",frameIdx,disk);
     page_frames[frameIdx]=disk->page;
     stat.numCycle +=SWAP_COST;
     stat.numSwapIn++;
-  }
+ }
 
   /* swap out a page to disk */
-  void swapOut(struct entry* e, struct page* frame, struct diskblock *dblk){
+ void swapOut(struct entry* e, struct page* frame, struct diskblock *dblk){
     dblk->page = frame;
     dblk->next = disk;//build up the list...
     disk = dblk;
@@ -204,7 +208,7 @@ int find_frame_index(struct page* pg){
     stat.numCycle+=SWAP_COST;
     if(_DEBUG) printf("Swap out %p to %p \n",frame,dblk);
     stat.numSwapOut++;
-  }
+ }
 
 
 
@@ -230,7 +234,7 @@ int alloc_page_frame(){
       if(_DEBUG)printf("found unused page frame %d\n",i);
       return i;
     }
-  }
+  }//end-for
 
 
   //maintain the list of page frames, do swap out, update, etc...
@@ -374,17 +378,19 @@ public:
     new_page(frameIdxOfPD);
     pdbr = page_frames[frameIdxOfPD];
 
-    //TODO
+    //TODO:
     //more initialization...
     
   }
 
   ~vmmsim(){//destructor, do cleaning-up 
-    // more cleaning up..
+    //TODO: more cleaning up..
   }
 
 
+  /* this function takes care of the read operation */
   void read(int addr){
+
     // printf("int addr is %d\n",addr);
     
     int ndxPD= getPDindex(addr);
@@ -393,10 +399,10 @@ public:
     
     struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
     
+    stat.numCycle+=MEM_COST;//INCREASE COST ____________________reading PD
     if(!pdEntry->valid){// if not valid
       //PT page fault
       if(_DEBUG)printf("PT page fault\n");
-      stat.numCycle+=MEM_COST;
       
       int freePageFrameNdx=alloc_page_frame();
 
@@ -424,10 +430,11 @@ public:
     struct page* PT= pdEntry->frame_addr;
     struct entry* PTEntry = &PT->entries[ndxPT];//
 
+    stat.numCycle+=MEM_COST;//INCREASE COST_________________reading PT
     if(!PTEntry->valid){
       //user page fault
       if(_DEBUG)printf("User page fault\n");
-      stat.numCycle+=MEM_COST;
+ 
       int freePageFrameNdx=alloc_page_frame();
       if(PTEntry->on_disk){
 	if(_DEBUG)printf("user page on disk, swapping in.. \n");
@@ -450,18 +457,14 @@ public:
 
     // accessing user page
     struct page* userPage = PTEntry->frame_addr;
-    stat.numCycle+=MEM_COST;
+    stat.numCycle+=MEM_COST;//INCREASE COST_________________reading user page
 
     
-    stat.numRead++;
-
-      
-
-	 
-		  
+    stat.numRead++;		  
 
   }
 
+  /* this function takes care of the write operation */
   void write(int addr){
     int ndxPD= getPDindex(addr);
     int ndxPT= getPTindex(addr);
@@ -469,10 +472,10 @@ public:
     
     struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
     
+    stat.numCycle+=MEM_COST;//INCREASE COST_____________reading PD
     if(!pdEntry->valid){// if not valid
       //PT page fault
       if(_DEBUG)printf("PT page fault\n");
-      stat.numCycle+=MEM_COST;
       
       int freePageFrameNdx=alloc_page_frame();
 
@@ -500,10 +503,11 @@ public:
     struct page* PT= pdEntry->frame_addr;
     struct entry* PTEntry = &PT->entries[ndxPT];//
 
+    stat.numCycle+=MEM_COST;// INCREASE COST___________________reading PT
     if(!PTEntry->valid){
       //user page fault
       if(_DEBUG)printf("User page fault\n");
-      stat.numCycle+=MEM_COST;
+
       int freePageFrameNdx=alloc_page_frame();
       if(PTEntry->on_disk){
 	if(_DEBUG)printf("user page on disk, swapping in.. \n");
@@ -516,8 +520,8 @@ public:
 
       stat.numPageTotal++;
       stat.numPageCurrent++;
-      if(stat.numPageCurrent>stat.numPageMax) stat.numPageMax=stat.numPageCurrent;
-      
+      if(stat.numPageCurrent>stat.numPageMax) stat.numPageMax=stat.numPageCurrent;  
+
       PTEntry->valid = true;
       pdEntry->valid = true;
     } else{
@@ -526,7 +530,7 @@ public:
 
     // accessing user page
     struct page* userPage = PTEntry->frame_addr;
-    stat.numCycle+=MEM_COST;
+    stat.numCycle+=MEM_COST;//INCREASE COST_______________reading user page
 
 
     PTEntry->dirty =true;
@@ -565,6 +569,14 @@ public:
       while(true){
 	char temp[2]; //to store r/w indicator
 	fscanf(stdin,"%s",temp);//scan them into temp[]
+
+	if(!strcmp(temp,"-p")){
+	  char num[10];
+	  printf("found p!\n");
+	  fscanf(stdin,"%s",num);
+	  printf("num is %s\n",num);
+	  continue;
+	}
 	if(!strcmp(temp,"-v")){
 	  _VERSION=true;
 	  temp[0]=' '; //the temp need to be cleared, otherwise infinite loop!
@@ -600,7 +612,7 @@ public:
 	//report strange character in input if found
 	//-t -v -d are skipped before,so don't need to care about them here
 	else {
-	  printf("STRANGE CHAR! CHECK YOUR INPUT!!!!!!!!!!!!!!!!!\n");
+	  printf("STRANGE CHAR! CHECK YOUR INPUT!!!!!!!!!\n");
 	  return;
 	}
 	      
