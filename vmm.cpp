@@ -373,8 +373,9 @@ int getPageOffset(int addr){
 
 class vmmsim{
 public:
-  //constructor, initialize configurations
-  vmmsim(){
+
+  vmmsim(){//ctor, init
+    
     //allocate an array of page frames
     page_frames = (page**) calloc(N_frames, sizeof(struct page*));
 
@@ -389,21 +390,23 @@ public:
   }
 
   ~vmmsim(){//destructor, do cleaning-up   
+    // printf("###DESTRUCTOR CALLED!!!###\n");
     free(page_frames);// free the array of frame pointers
+    //delete[] page_frames;
     //now free the pages
     for(int i=0;i<N_frames;++i){
       struct entry* pdEntry=&pdbr->entries[i];
-      
+
       if(pdEntry->valid || pdEntry->on_disk){
 	struct page* PT = pdEntry->frame_addr;
 	for(int j=0;j<N_frames;++j){
 	  struct entry* ptEntry=&PT->entries[j];
 	  //if page exists
 	  if(ptEntry->valid || ptEntry->on_disk){
-	    free(ptEntry->frame_addr);
+	    free(ptEntry->frame_addr);//free every page in PT
 	  }
 	}//end-for
-	free(PT);
+	free(PT);//free PT itself
       }
     }//end-for
 
@@ -412,7 +415,7 @@ public:
     struct diskblock* next;
     while(ptr){
       next=ptr->next;
-      free(ptr);
+      free(ptr);//free one block
       ptr=next;
     }
     
@@ -695,7 +698,9 @@ public:
       if(_DEBUG)printf("[[- DEBUG ACTIVATED -]]\n");
       if(_TRACE)printf("[[- TRACE ACTIVATED -]]\n");
       printStat();
-      }//end-else
+      
+      delete myVmm;//delete cause dtor ~vmmsim() called and free mem
+    }//end-else
 
    /* following block prints out debug info in LIFO order!!  */
    if(_DEBUG){
@@ -709,7 +714,7 @@ public:
    
  }//end-function
 
-};
+};//end-driver-class
 
 int main(int argc, char* argv[]){
   //set up Version, Trace, Debug if entered from keyboard
