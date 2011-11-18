@@ -432,6 +432,7 @@ public:
 	sprintf(buffer1,"[PD] entry %d - valid: %d, dirty: %d, on_disk:%d \n",i,pdEntry->valid, pdEntry->dirty,pdEntry->on_disk);
 	log.append(buffer1);
 	struct page* PT=pdEntry->frame_addr;
+
 	for(int j=0;j<N_ENTRY_PER_PAGE;++j){
 	  struct entry* ptEntry=&PT->entries[j];
 	  if(ptEntry->valid||ptEntry->on_disk){//print PT states
