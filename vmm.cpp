@@ -23,15 +23,20 @@ using namespace std;
 #define MIN_NUM_FRAMES 3 //frames can not be less than 3
 
 
-// by default, debug, trace and version command are all disabled
-bool _DEBUG = false;
+/* by default, debug, trace and version command are all disabled */
+
+bool _DEBUG = false;//for debug info, printing the vmm state
 bool _TRACE = false;
 bool _VERSION = false;
 
-// default frame number is 10
-int N_frames =50;
+//DEV_DEBUG is used by developers
+bool DEV_DEBUG = false;
 
-//stack<string> debugInfo; // LIFO for debug information
+// default frame number is 10
+int N_frames =10;
+
+// LIFO for debug information, each is packed as string
+stack<string> debugInfo;
 
 /* this struct keep track of the statistics */
 struct vmm_status{
@@ -54,16 +59,16 @@ struct vmm_status{
   int numPageCurrent; //# of pages currently resident in mem
 
   int numFrame;
-} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,N_frames};
+} stat ={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 void printStat(){
   //prepare the data for printing
   stat.numAccess = stat.numRead+ stat.numWrite;
   stat.numCyclesWithoutVmm= stat.numAccess * MEM_COST;
-  
+  stat.numFrame=N_frames;
   printf("--------------STATISTICS---------------\n");
   printf("Access: %d\n Reads: %d\n Writes: %d\n Cycles: %d\n Cycles Without VMM :%d\n Swap ins: %d\n Swap outs: %d\n Pure Replacements: %d\n PD entries used: %d\n PT total: %d\n PT max: %d\n user pages total: %d\n user pages max: %d\n Physical page frames: %d\n",stat.numAccess, stat.numRead, stat.numWrite, stat.numCycle, stat.numCyclesWithoutVmm, stat.numSwapIn, stat.numSwapOut, stat.numReplacement, stat.numPDEntry, stat.numPT, stat.numPTMax, stat.numPageTotal, stat.numPageMax, stat.numFrame);
-  printf("-----------------END-----------------\n");
+  printf("-----------END OF STATISTICS-----------\n\n");
 }
 
 
@@ -170,7 +175,7 @@ struct page{
 int find_frame_index(struct page* pg){
   for(int i=0;i<N_frames;++i){
     if(page_frames[i]==pg){
-      if(_DEBUG)printf("returning frame index %d\n",i);
+      if(DEV_DEBUG)printf("returning frame index %d\n",i);
       return i;
     }
   }
@@ -186,14 +191,14 @@ int find_frame_index(struct page* pg){
       fprintf(stderr,"allocDiskBlock: Not enough memory!\n");
       exit(1);
     }
-    if(_DEBUG)printf("allocated new disk block %p \n",dblk);
+    if(DEV_DEBUG)printf("allocated new disk block %p \n",dblk);
     return dblk;
  }
 
 
   /*swap in a page from disk to given frame index */
  void swapIn(struct diskblock* disk, int frameIdx){
-    if(_DEBUG)printf("Swap in page %d from disk %p \n",frameIdx,disk);
+    if(DEV_DEBUG)printf("Swap in page %d from disk %p \n",frameIdx,disk);
     page_frames[frameIdx]=disk->page;
     stat.numCycle +=SWAP_COST;
     stat.numSwapIn++;
@@ -206,7 +211,7 @@ int find_frame_index(struct page* pg){
     disk = dblk;
     e->disk_addr=dblk;
     stat.numCycle+=SWAP_COST;
-    if(_DEBUG) printf("Swap out %p to %p \n",frame,dblk);
+    if(DEV_DEBUG) printf("Swap out %p to %p \n",frame,dblk);
     stat.numSwapOut++;
  }
 
@@ -215,7 +220,7 @@ int find_frame_index(struct page* pg){
 /* create a new page in page frames with index idx */
 void new_page(int idx){
   page_frames[idx]=(page*)calloc(1,sizeof(struct page));
-  if(_DEBUG)printf("new page at page_frames[%d]\n",idx);
+  if(DEV_DEBUG)printf("new page at page_frames[%d]\n",idx);
   if(!page_frames[idx]){
     fprintf(stderr,"not enough memory for newing a page!\n");
     exit(1);
@@ -231,7 +236,7 @@ int alloc_page_frame(){
   //check if free page frame available
   for(int i=0; i<N_frames;++i){
     if(page_frames[i]==NULL){
-      if(_DEBUG)printf("found unused page frame %d\n",i);
+      if(DEV_DEBUG)printf("found unused page frame %d\n",i);
       return i;
     }
   }//end-for
@@ -254,25 +259,25 @@ int alloc_page_frame(){
       struct page* PT = pdEntry->frame_addr;
       
       if(pdEntry->dirty && !modifiedPT){
-	if(_DEBUG)printf("found modified page table frame\n");
+	if(DEV_DEBUG)printf("found modified page table frame--codeline260 \n");
 	modifiedPT=PT;
 	mpt_PDEntry=pdEntry;
-      }
+	}
       
       if(!pdEntry->dirty && !unmodifiedPT){
-	if(_DEBUG)printf("found unmodified page table frame\n");
+	if(DEV_DEBUG)printf("found unmodified page table frame\n");
 	unmodifiedPT=PT;
 	upt_PDEntry=pdEntry;
       }
       
-      for(int j=0;j<N_ENTRY_PER_PAGE;++i){
+      for(int j=0;j<N_ENTRY_PER_PAGE;++j){
 	struct entry* ptEntry = &PT->entries[j];
 	//if in memory
 	if(ptEntry->valid){
 	  struct page* userPage = ptEntry->frame_addr;
 
 	  if(ptEntry->dirty && !modifiedUP){
-	    if(_DEBUG)printf("found modified user page \n");
+	    if(DEV_DEBUG)printf("found modified user page \n");
 	    modifiedUP=userPage;
 	    mup_PTEntry=ptEntry;
 	    mup_PDEntry=pdEntry;
@@ -280,7 +285,7 @@ int alloc_page_frame(){
 
 	  if(!ptEntry->dirty){
 	    // the best option
-	    if(_DEBUG)printf("found unmodified user page frame! \n");
+	    if(DEV_DEBUG)printf("found unmodified user page frame! \n");
 	    if(!ptEntry->on_disk){
 	      struct diskblock* dblk = allocDiskBlock();
 	      swapOut(ptEntry,userPage,dblk);
@@ -310,7 +315,7 @@ int alloc_page_frame(){
     stat.numPageCurrent--;
     mup_PTEntry->valid = false;
     mup_PDEntry->dirty= true;
-    if(_DEBUG)printf("returning modified user page \n");
+    if(DEV_DEBUG)printf("returning modified user page \n");
     return find_frame_index(modifiedUP);
   }
 
@@ -325,7 +330,7 @@ int alloc_page_frame(){
     }
     stat.numPTcurrent--;
     upt_PDEntry->valid = false;
-    if(_DEBUG) printf(" returning unmodified page table\n");
+    if(DEV_DEBUG) printf(" returning unmodified page table\n");
     return find_frame_index(unmodifiedPT);
   }
 
@@ -340,7 +345,7 @@ int alloc_page_frame(){
     swapOut(mpt_PDEntry,modifiedPT, dblk);
     stat.numPTcurrent--;
     mpt_PDEntry->valid = false;
-    if(_DEBUG) printf("returning modified page table \n");
+    if(DEV_DEBUG) printf("returning modified page table \n");
     return find_frame_index(modifiedPT);
   }
 
@@ -379,14 +384,66 @@ public:
     pdbr = page_frames[frameIdxOfPD];
 
     //TODO:
-    //more initialization...
+    // maybe more initialization...
     
   }
 
-  ~vmmsim(){//destructor, do cleaning-up 
-    //TODO: more cleaning up..
+  ~vmmsim(){//destructor, do cleaning-up   
+    free(page_frames);// free the array of frame pointers
+    //now free the pages
+    for(int i=0;i<N_frames;++i){
+      struct entry* pdEntry=&pdbr->entries[i];
+      
+      if(pdEntry->valid || pdEntry->on_disk){
+	struct page* PT = pdEntry->frame_addr;
+	for(int j=0;j<N_frames;++j){
+	  struct entry* ptEntry=&PT->entries[j];
+	  //if page exists
+	  if(ptEntry->valid || ptEntry->on_disk){
+	    free(ptEntry->frame_addr);
+	  }
+	}//end-for
+	free(PT);
+      }
+    }//end-for
+
+    //free disk blocks
+    struct diskblock* ptr=disk;
+    struct diskblock* next;
+    while(ptr){
+      next=ptr->next;
+      free(ptr);
+      ptr=next;
+    }
+    
   }
 
+  //function to log vmm status/debug info
+  void logDebugInfo(){
+    string log;
+    log.append("\n-vmm state-\n");
+    for(int i=0;i<N_ENTRY_PER_PAGE;++i){
+      struct entry* pdEntry = &pdbr->entries[i];
+      if(pdEntry->valid||pdEntry->on_disk){//print PD states
+	char buffer1[80];
+	sprintf(buffer1,"[PD] entry %d - valid: %d, dirty: %d, on_disk:%d \n",i,pdEntry->valid, pdEntry->dirty,pdEntry->on_disk);
+	log.append(buffer1);
+	struct page* PT=pdEntry->frame_addr;
+	for(int j=0;j<N_ENTRY_PER_PAGE;++j){
+	  struct entry* ptEntry=&PT->entries[j];
+	  if(ptEntry->valid||ptEntry->on_disk){//print PT states
+	    //struct page* pg= ptEntry->frame_addr;
+	    char buffer2[80];
+	    sprintf(buffer2,"[PT] entry %d - valid: %d, dirty: %d, on_disk: %d \n",j, ptEntry->valid, ptEntry->dirty, ptEntry->on_disk);
+	    log.append(buffer2);
+	  }
+	}//end-for(N_ENTRY_PER_PAGE)
+      }
+    }//end-for(N_ENTRY_PER_PAGE)
+    //  cout<<log;
+    
+    debugInfo.push(log); //push log(string) to stack for LIFO output
+  }//end-func
 
   /* this function takes care of the read operation */
   void read(int addr){
@@ -399,18 +456,18 @@ public:
     
     struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
     
-    stat.numCycle+=MEM_COST;//INCREASE COST ____________________reading PD
+    stat.numCycle+=MEM_COST;//INCREASE COST ___________reading PD
     if(!pdEntry->valid){// if not valid
       //PT page fault
-      if(_DEBUG)printf("PT page fault\n");
+      if(DEV_DEBUG)printf("PT page fault\n");
       
       int freePageFrameNdx=alloc_page_frame();
 
       if(pdEntry->on_disk){
-	if(_DEBUG)printf("PT page on disk, swapping in..\n");
+	if(DEV_DEBUG)printf("PT page on disk, swapping in..\n");
 	swapIn(pdEntry->disk_addr, freePageFrameNdx);
       } else {
-	if(_DEBUG)printf("PT page not on disk, create new PT page \n");
+	if(DEV_DEBUG)printf("PT page not on disk, create new PT page \n");
 	new_page(freePageFrameNdx);
 	pdEntry->frame_addr = page_frames[freePageFrameNdx];
 	stat.numPDEntry++;
@@ -424,23 +481,23 @@ public:
     }// end if not valid
 
     else {
-      if(_DEBUG)printf("PT page found\n");
+      if(DEV_DEBUG)printf("PT page found\n");
     }
 
     struct page* PT= pdEntry->frame_addr;
     struct entry* PTEntry = &PT->entries[ndxPT];//
 
-    stat.numCycle+=MEM_COST;//INCREASE COST_________________reading PT
+    stat.numCycle+=MEM_COST;//INCREASE COST________reading PT
     if(!PTEntry->valid){
       //user page fault
-      if(_DEBUG)printf("User page fault\n");
+      if(DEV_DEBUG)printf("User page fault\n");
  
       int freePageFrameNdx=alloc_page_frame();
       if(PTEntry->on_disk){
-	if(_DEBUG)printf("user page on disk, swapping in.. \n");
+	if(DEV_DEBUG)printf("user page on disk, swapping in.. \n");
 	swapIn(PTEntry->disk_addr, freePageFrameNdx);
       } else{
-	if(_DEBUG)printf("user page not on disk: create new user page \n");
+	if(DEV_DEBUG)printf("user page not on disk: create new user page \n");
 	new_page(freePageFrameNdx);
 	PTEntry->frame_addr=page_frames[freePageFrameNdx];
       }
@@ -452,17 +509,18 @@ public:
       PTEntry->valid = true;
       pdEntry->valid = true;
     } else{
-      if(_DEBUG) printf("user page found\n");
+      if(DEV_DEBUG) printf("user page found\n");
     }
-
+    
     // accessing user page
     struct page* userPage = PTEntry->frame_addr;
-    stat.numCycle+=MEM_COST;//INCREASE COST_________________reading user page
+    stat.numCycle+=MEM_COST;//INCREASE COST________reading user page
 
     
-    stat.numRead++;		  
+    stat.numRead++;
+    if(_DEBUG) logDebugInfo(); //take notes of debug information
 
-  }
+  }//end-read()
 
   /* this function takes care of the write operation */
   void write(int addr){
@@ -472,18 +530,18 @@ public:
     
     struct entry* pdEntry= &pdbr->entries[ndxPD];//TRICKY here
     
-    stat.numCycle+=MEM_COST;//INCREASE COST_____________reading PD
+    stat.numCycle+=MEM_COST;//INCREASE COST_________reading PD
     if(!pdEntry->valid){// if not valid
       //PT page fault
-      if(_DEBUG)printf("PT page fault\n");
+      if(DEV_DEBUG)printf("PT page fault\n");
       
       int freePageFrameNdx=alloc_page_frame();
 
       if(pdEntry->on_disk){
-	if(_DEBUG)printf("PT page on disk, swapping in..\n");
+	if(DEV_DEBUG)printf("PT page on disk, swapping in..\n");
 	swapIn(pdEntry->disk_addr, freePageFrameNdx);
       } else {
-	if(_DEBUG)printf("PT page not on disk, create new PT page \n");
+	if(DEV_DEBUG)printf("PT page not on disk, create new PT page \n");
 	new_page(freePageFrameNdx);
 	pdEntry->frame_addr = page_frames[freePageFrameNdx];
 	stat.numPDEntry++;
@@ -497,23 +555,23 @@ public:
     }// end if not valid
 
     else {
-      if(_DEBUG)printf("PT page found\n");
+      if(DEV_DEBUG)printf("PT page found\n");
     }
 
     struct page* PT= pdEntry->frame_addr;
     struct entry* PTEntry = &PT->entries[ndxPT];//
 
-    stat.numCycle+=MEM_COST;// INCREASE COST___________________reading PT
+    stat.numCycle+=MEM_COST;// INCREASE COST___________reading PT
     if(!PTEntry->valid){
       //user page fault
-      if(_DEBUG)printf("User page fault\n");
+      if(DEV_DEBUG)printf("User page fault\n");
 
       int freePageFrameNdx=alloc_page_frame();
       if(PTEntry->on_disk){
-	if(_DEBUG)printf("user page on disk, swapping in.. \n");
+	if(DEV_DEBUG)printf("user page on disk, swapping in.. \n");
 	swapIn(PTEntry->disk_addr, freePageFrameNdx);
       } else{
-	if(_DEBUG)printf("user page not on disk: create new user page \n");
+	if(DEV_DEBUG)printf("user page not on disk: create new user page \n");
 	new_page(freePageFrameNdx);
 	PTEntry->frame_addr=page_frames[freePageFrameNdx];
       }
@@ -525,18 +583,20 @@ public:
       PTEntry->valid = true;
       pdEntry->valid = true;
     } else{
-      if(_DEBUG) printf("user page found\n");
+      if(DEV_DEBUG) printf("user page found\n");
     }
 
     // accessing user page
     struct page* userPage = PTEntry->frame_addr;
-    stat.numCycle+=MEM_COST;//INCREASE COST_______________reading user page
+    stat.numCycle+=MEM_COST;//INCREASE COST_________reading user page
 
 
     PTEntry->dirty =true;
     pdEntry->dirty = true;
     stat.numWrite++;
-  }
+
+    if(_DEBUG) logDebugInfo();//take notes of debug information
+  }//end_write()
 
 
 };//end class
@@ -571,10 +631,22 @@ public:
 	fscanf(stdin,"%s",temp);//scan them into temp[]
 
 	if(!strcmp(temp,"-p")){
-	  char num[10];
-	  printf("found p!\n");
+	  char num[20];
+	  //printf("found p!\n");
 	  fscanf(stdin,"%s",num);
-	  printf("num is %s\n",num);
+	  // printf("num is %s\n",num);
+	  int it=0, N=0;
+	  while(num[it]!='\0'){
+	    N=N*10+(num[it]-'0');
+	    it++;
+	  }
+	  //printf("num in int is %d\n",N);
+	  N_frames=N;
+
+	  if(N_frames<MIN_NUM_FRAMES){
+	    fprintf(stderr,"Too few page frames!\n");
+	    exit(1);
+	  }
 	  continue;
 	}
 	if(!strcmp(temp,"-v")){
@@ -626,11 +698,14 @@ public:
       }//end-else
 
    /* following block prints out debug info in LIFO order!!  */
-  /* if(_DEBUG)printf("BELOW IS DEBUG INFORMATION IN LIFO ORDER\n");
-   while(!debugInfo.empty()){
-     if(_DEBUG)cout<<debugInfo.top();
-     debugInfo.pop();
-   }*/
+   if(_DEBUG){
+     printf("---- DEBUG INFORMATION IN LIFO ORDER -----\n");
+     while(!debugInfo.empty()){
+       if(_DEBUG)cout<<debugInfo.top();
+       debugInfo.pop();
+     }
+     printf("------END OF DEBUG INFO------\n");
+   }
    
  }//end-function
 
@@ -643,12 +718,6 @@ int main(int argc, char* argv[]){
     if(strcmp(argv[n],"-v")==0) _VERSION = true;
     if(strcmp(argv[n],"-t")==0) _TRACE = true;
   }//end-for
-
-  if(N_frames<MIN_NUM_FRAMES){
-    fprintf(stderr,"Too few page frames!\n");
-    exit(1);
-  }
-
 
   /*feed the input file(last arg) into the driver for initialization*/
   driver* myDriver = new driver(argv[argc-1]); 

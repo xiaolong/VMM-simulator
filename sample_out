@@ -1,0 +1,2095 @@
+INPUT FILE SUCCESSFULLY LOADED 
+[[- DEBUG ACTIVATED -]]
+--------------STATISTICS---------------
+Access: 158
+ Reads: 119
+ Writes: 39
+ Cycles: 859480
+ Cycles Without VMM :3160
+ Swap ins: 8
+ Swap outs: 9
+ Pure Replacements: 8
+ PD entries used: 1
+ PT total: 1
+ PT max: 1
+ user pages total: 26
+ user pages max: 17
+ Physical page frames: 20
+-----------END OF STATISTICS-----------
+
+---- DEBUG INFORMATION IN LIFO ORDER -----
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 94 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 94 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 93 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 92 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 91 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 90 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 89 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 88 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 87 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 0, dirty: 0, on_disk: 1 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 86 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 85 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 84 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 83 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 82 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 81 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 80 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 1 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 1, on_disk:0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 1, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 0, on_disk:0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+[PT] entry 157 - valid: 1, dirty: 0, on_disk: 0 
+
+-vmm state-
+[PD] entry 0 - valid: 1, dirty: 0, on_disk:0 
+[PT] entry 79 - valid: 1, dirty: 0, on_disk: 0 
+------END OF DEBUG INFO------
